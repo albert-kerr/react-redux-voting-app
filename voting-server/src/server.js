@@ -9,7 +9,7 @@ export function startServer(store) {
 
   io.on('connection', (socket) => {
     socket.emit('state', store.getState().toJS());
-    socket.on('action', store.disatch.bind(store));
+    socket.on('action', store.dispatch.bind(store));
   });
 
 }
